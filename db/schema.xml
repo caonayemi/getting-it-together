@@ -37,7 +37,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="151" y="202" name="users">
+</datatypes><table x="384" y="329" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -60,7 +60,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="369" y="284" name="goals">
+<table x="612" y="392" name="goals">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -82,8 +82,8 @@
 <row name="to_be_completed_on" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
-<row name="progress" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
+<row name="is_completed" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
 <default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
@@ -95,7 +95,29 @@
 <part>id</part>
 </key>
 </table>
-<table x="605" y="190" name="togetherness_pillars">
+<table x="633" y="207" name="friendships">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="initiator_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="acceptor_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="created_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<row name="updated_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="874" y="292" name="togetherness_pillars">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -118,7 +140,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="645" y="399" name="goal_methods">
+<table x="903" y="537" name="goal_methods">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -145,18 +167,20 @@
 </key>
 <comment>categories?</comment>
 </table>
-<table x="386" y="101" name="friendships">
+<table x="351" y="552" name="milestones">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="initiator_id" null="1" autoincrement="0">
+<row name="goal_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
+<default>NULL</default><relation table="goals" row="id" />
 </row>
-<row name="acceptor_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="is_completed" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
