@@ -8,6 +8,7 @@ class CreateGoals < ActiveRecord::Migration
       t.datetime   :deadline
       t.boolean    :is_started
       t.boolean    :is_completed
+      t.integer    :self_rating
 
       t.timestamps
     end
