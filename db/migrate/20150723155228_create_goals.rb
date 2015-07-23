@@ -4,8 +4,9 @@ class CreateGoals < ActiveRecord::Migration
       t.references :setter
       t.references :pillar
       t.references :strand
-      t.date       :set_on
-      t.date       :deadline
+      t.datetime   :set_at
+      t.datetime   :deadline
+      t.boolean    :is_started
       t.boolean    :is_completed
 
       t.timestamps
