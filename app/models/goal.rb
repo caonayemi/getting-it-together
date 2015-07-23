@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  belongs_to :setter, class_name: "User"
+  belongs_to :setter, class_name: :User
   belongs_to :pillar
   belongs_to :strand
   has_many :milestones
