@@ -1,0 +1,9 @@
+<h3>Complete to create a new account</h3>
+<br>
+<hr>
+<%= erb :"_error_box" %>
+<form action='/signup' method='post' id='user-signin'>
+  <%= erb :"sessions/_login_form_fields", locals: {person: @person } %>
+  <input type='text' name="sessions[email]" placeholder="email" value="<%= @person.email %>">
+  <input type="submit" value="Signup">
+</form>
