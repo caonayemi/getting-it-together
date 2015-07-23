@@ -18,6 +18,10 @@
   <title>TogetherGetter</title>
 </head>
 <body>
+  <div class="nav-bar">
+    <span class="definition"><a href="/">The Definition</a></span>
+    <%= login_logout_button(current_user) %>
+  </div>
   <%= yield %>
 </body>
 </html>
