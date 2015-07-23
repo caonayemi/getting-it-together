@@ -8,7 +8,7 @@ The Ladies would like to emphasize that Togetherness is an ongoing, iterative pr
 
 Edited and ratified December 30, 2014 by unanimous vote of the membership, to date.
 
-##As a Together Lady I strive to…
+##As a Together Person I strive to…
 
 ###Take care of my body.
 
@@ -57,7 +57,7 @@ Characteristics of Organizational Togetherness (OT):
   - Electronic Device(s)
   - Digital Storage
 
-Take care of my relationships.
+###Take care of my relationships.
 
 * Acknowledge and demonstrate the value of the people I love.
 * Be reliable and treat people with kindness and respect.
@@ -89,4 +89,4 @@ Characteristics of Flexibility:
 * Recognize that sometimes plans need to change, and sometimes events that are out of my control take precedence.
 * Adapt my goals and create realistic expectations for the REAL reality of different situations.
 
-As a Together Lady, I recognize that not all things are in my control, and I strive to get those things that are in my control under control.
+####As a Together Person, I recognize that not all things are in my control, and I strive to get those things that are in my control under control.
