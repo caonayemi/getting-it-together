@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  include BCrypt
+  has_many :goals, foreign_key: :setter_id
 
+  include BCrypt
 
   def password
     @password ||= Password.new(password_hash)
