@@ -3,3 +3,7 @@
   width: 720px;
   padding: 20px;
 }
+
+.pillar-name {
+  font-weight: bold;
+}
