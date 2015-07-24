@@ -2,6 +2,16 @@
   <div class="checkbox"></div>
   <a href="/goals/<%= goal.id %>"><strong><%= goal.name %></strong></a><br>
   <%= goal.pillar.name %>: <%= goal.strand.name %><br>
-  <span <% if goal.set_at < DateTime.current && !goal.is_completed %> class="active" <% end %>>Start: <%= goal.set_at %></span><br>
-  <span <% if goal.deadline < (DateTime.current + 3) && !goal.is_completed %> class="active" <% end %>>Deadline: <%= goal.deadline %></span>
+  <% if goal.set_at < DateTime.current && !goal.is_completed %>
+    <span class="active">
+  <% else %>
+    <span>
+  <% end %>
+  Start: <%= goal.set_at %></span><br>
+  <% if goal.deadline < (DateTime.current + 3) && !goal.is_completed %>
+    <span class="active">
+  <% else %>
+    <span>
+  <% end %>
+  Deadline: <%= goal.deadline %></span>
 </div>
