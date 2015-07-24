@@ -36,3 +36,7 @@ span.active {
 h1 {
   text-align: center;
 }
+
+.goal-listing h3 {
+  display: inline-block;
+}
