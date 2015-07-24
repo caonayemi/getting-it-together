@@ -1,7 +1,7 @@
 <div class="goal-listing">
   <div class="checkbox"></div>
-  <a href="/goals/<%= goal.id %>"><strong><%= goal.name %></strong></a><br>
-  <%= goal.pillar.name %>: <%= goal.strand.name %><br>
+  <h3><a href="/goals/<%= goal.id %>"><%= goal.name %></a></h3><br>
+  <strong><%= goal.pillar.name %>:</strong> <%= goal.strand.name %><br>
   <% if goal.set_at < DateTime.current && !goal.is_completed %>
     <span class="active">
   <% else %>
