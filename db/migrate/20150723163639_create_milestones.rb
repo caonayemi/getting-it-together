@@ -4,7 +4,7 @@ class CreateMilestones < ActiveRecord::Migration
       t.references :setter
       t.references :goal
       t.string     :description
-      t.boolean    :is_completed
+      t.boolean    :is_completed, default: false
 
       t.timestamps
     end

@@ -50,6 +50,19 @@ strands = Strand.all
   Goal.create!(setter: users.sample, name: (Faker::Hacker.verb + " " + Faker::Hacker.adjective + " " + Faker::Hacker.noun), pillar: pillars.sample, strand: strands.sample, set_at: DateTime.current, deadline: (DateTime.current + 30))
 end
 
+goals = Goal.all
+
+goals.each do |goal|
+  case goal.strand.tracking_style
+  when "One milestone"
+    Milestone.create!(setter: goal.setter, goal: goal, description: Faker::Hacker.say_something_smart)
+  when "User sets number of milestones"
+    rand(3..7).times do
+      Milestone.create!(setter: goal.setter, goal: goal, description: Faker::Hacker.say_something_smart)
+    end
+  when "No milestones; self-rating only"
+end
+
 Friendship.create!(initiator: user1, acceptor: user2)
 Friendship.create!(initiator: user1, acceptor: user3)
 Friendship.create!(initiator: user2, acceptor: user3)
