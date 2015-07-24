@@ -1,0 +1,15 @@
+<%= erb :_nav_bar, layout: false %>
+<h1><%= @goal.name %></h1>
+<p><strong><%= @goal.pillar.name %>:</strong> <%= @goal.strand.name %></p>
+<p><%= @goal.description %></p>
+<p>Start: <%= @goal.start_at %></p>
+<p>Deadline: <%= @goal.deadline %></p>
+<p>Completed?
+<% if @goal.is_completed %>
+Yes!
+<% else %>
+Not yet...
+<% end %>
+</p>
+<p>Self Rating: <%= @goal.self_rating || "Not yet rated" %> <a href="/goal/<%= @goal.id %>/edit">Add/Change Rating</a></p>
+ <a href="/goal/<%= @goal.id %>/edit">Edit Goal</a>

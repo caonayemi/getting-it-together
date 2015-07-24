@@ -2,7 +2,7 @@ get '/goals/new' do
   erb :"goals/new"
 end
 
-post '/goals/new' do
+post '/goals' do
   if current_user
     @user = current_user
   else
@@ -26,4 +26,10 @@ get '/goals/:goal_id' do
   else
     redirect "/login"
   end
+end
+
+get '/goals/:goal_id/edit' do
+end
+
+post '/goals/:goal_id' do
 end
