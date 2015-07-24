@@ -5,7 +5,7 @@ end
 
 post '/login' do
   if @user = User.authenticate(params[:sessions])
-    session[:user_id] = user.id
+    session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else
     @user = User.new(params[:sessions])
