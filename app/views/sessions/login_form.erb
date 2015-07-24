@@ -1,8 +1,8 @@
-<h3>Below your login, <a href='/signup'>create new</a> if you need to</h3>
+<h3>Login below, or <a href="/signup">sign up</a> to create a new account.</h3>
 <br>
 <hr>
 <%= erb :"_error_box" %>
-<form action='/login' method='post' id='user-signin'>
-  <%= erb :"sessions/_login_form_fields", locals: {person: @person } %>
+<form action="/login" method="post" id="user-login">
+  <%= erb :"sessions/_login_form_fields", layout: false, locals: {person: @person } %>
   <input type="submit" value="Login">
 </form>

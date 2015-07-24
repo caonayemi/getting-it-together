@@ -2,8 +2,8 @@
 <br>
 <hr>
 <%= erb :"_error_box" %>
-<form action='/signup' method='post' id='user-signin'>
-  <%= erb :"sessions/_login_form_fields", locals: {person: @person } %>
-  <input type='text' name="sessions[email]" placeholder="email" value="<%= @person.email %>">
-  <input type="submit" value="Signup">
+<form action="/signup" method="post" id="user-login">
+  <input type="text" name="sessions[email]" placeholder="email" value="<%= @person.email %>">
+  <%= erb :"sessions/_login_form_fields", layout: false, locals: {person: @person } %>
+  <input type="submit" value="Sign Up">
 </form>

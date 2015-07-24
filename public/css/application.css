@@ -8,4 +8,7 @@
   font-weight: bold;
 }
 
-
+.error-messages {
+  color: red;
+  font-size: 10px;
+}
