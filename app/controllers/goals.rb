@@ -12,7 +12,7 @@ post '/goals' do
   @goal = Goal.new(params[:goal_info])
   @goal.setter = @user
   if @goal.save
-    redirect "/users/#{@user.id}"
+    redirect "/goals/#{@goal.id}/edit"
   else
     @errors = @goal.errors.full_messages
     erb :"goals/new"
@@ -30,6 +30,14 @@ get '/goals/:goal_id' do
 end
 
 get '/goals/:goal_id/edit' do
+  if current_user
+    @user = current_user
+  else
+    redirect "/login"
+  end
+
+  @goal = Goal.find(params[:goal_id])
+  erb :"goals/edit"
 end
 
 post '/goals/:goal_id' do
