@@ -47,7 +47,7 @@ pillars = Pillar.all
 strands = Strand.all
 
 20.times do
-  Goal.create!(setter: users.sample, name: (Faker::Hacker.verb + " " + Faker::Hacker.adjective + " " + Faker::Hacker.noun), pillar: pillars.sample, strand: strands.sample, set_at: DateTime.current, deadline: (DateTime.current + 30))
+  Goal.create!(setter: users.sample, name: (Faker::Hacker.verb + " " + Faker::Hacker.adjective + " " + Faker::Hacker.noun), pillar: pillars.sample, strand: strands.sample, set_at: DateTime.current, deadline: (DateTime.current + rand(1..5)))
 end
 
 goals = Goal.all
