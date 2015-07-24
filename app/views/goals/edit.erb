@@ -1,0 +1,6 @@
+<%= erb :_nav_bar, layout: false %>
+<h2>Edit Goal: <%= @goal.name %></h2>
+<form action="/goals" method="post" class="edit-goal-form">
+
+  <input type="submit" value="Save Goal">
+</form>
