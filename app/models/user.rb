@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   has_many :goals, foreign_key: :setter_id
+  has_many :pillars, through: :goals
+  has_many :strands, through: :goals
+  has_many :friendships, foreign_key: :initiator_id
+  has_many :friendships, foreign_key: :acceptor_id
 
   include BCrypt
 
