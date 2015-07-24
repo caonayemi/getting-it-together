@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :friendships, foreign_key: :initiator_id
   has_many :friendships, foreign_key: :acceptor_id
 
+  validate :email_requirements
   validates :username, presence: true, uniqueness: true
   validate :password_requirements
 
@@ -40,6 +41,12 @@ class User < ActiveRecord::Base
       if raw_password.length < 6 || !(raw_password =~ /[!@#$%^&*]/)
         errors.add(:password, "must be at least 6 characters long and contain at least 1 special character (!@#$%^&*).")
       end
+    end
+  end
+
+  def email_requirements
+    if !(/.+@\w+\.\w+/ =~ self.email)
+      errors.add(:email, "must be a valid email address")
     end
   end
 end
