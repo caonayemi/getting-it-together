@@ -1,5 +1,5 @@
 <div class="goal-listing">
-  <span class="checkbox"></span>
+  <div class="checkbox"></div>
   <h3><a href="/goals/<%= goal.id %>"><%= goal.name %></a></h3><br>
   <strong><%= goal.pillar.name %>:</strong> <%= goal.strand.name %><br>
   <% if goal.set_at < DateTime.current && !goal.is_completed %>
@@ -13,5 +13,5 @@
   <% else %>
     <span>
   <% end %>
-  Deadline: <%= goal.deadline %></span>
+  Deadline: <%= goal.deadline %></span><br><br>
 </div>
