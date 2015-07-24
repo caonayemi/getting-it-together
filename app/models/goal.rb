@@ -11,6 +11,10 @@ class Goal < ActiveRecord::Base
   validates :set_at, presence: true
   validate :deadline_is_after_set_date
 
+  def is_started
+    self.set_at < DateTime.current
+  end
+
   def is_completed
     self.milestones.all? do |milestone|
       milestone.is_completed
