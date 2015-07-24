@@ -14,6 +14,10 @@
       <option value="<%= strand.name %>"><%= strand.name %></option>
     <% end %>
   </select><br>
-  <textarea name="description">describe your goal</textarea>
+  <textarea name="description">describe your goal</textarea><br>
+  <input type="date" name="set_date" value="<%= Date.current %>">
+  <input type="time" name="set_time" value="<%= Time.current %>"><br>
+  <input type="date" name="end_date" value="<%= (Date.current + 30) %>">
+  <input type="time" name="end_time" value="<%= Time.current %>"><br>
   <input type="submit" value="Set Goal">
 </form>
