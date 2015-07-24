@@ -1,5 +1,5 @@
 <%= erb :_nav_bar, layout: false %>
 <h2>Goals</h2>
-<% @goals.each.do |goal| %>
+<% @goals.each do |goal| %>
   <%= erb :"_goal_listing", layout: false, locals: {goal: goal} %>
 <% end %>
