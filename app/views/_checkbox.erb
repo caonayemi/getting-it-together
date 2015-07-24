@@ -1,5 +1,5 @@
-<% if goal.is_completed %>
-  <div class="checked-box"></div>
-<% else %>
+<% if goal.is_completed == false %>
   <div class="unchecked-box"></div>
+<% else %>
+  <div class="checked-box"></div>
 <% end %>
