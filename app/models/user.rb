@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
   has_many :friendships, foreign_key: :acceptor_id
 
   validates :username, presence: true, uniqueness: true
-
-  # To Do: Add validations for password
+  validate :password_requirements
 
   include BCrypt
 
@@ -16,19 +15,22 @@ class User < ActiveRecord::Base
   end
 
   def password=(new_password)
+    @raw_password = new_password
     @password = Password.create(new_password)
     self.password_hash = @password
   end
 
-  def self.authenticate(args)
-    user = User.find_by(username: args[:username])
-    if user && user.password == args[:password]
-      user
-    else
-      nil
-    end
+  private
+
+  def raw_password
+    @raw_password || ""
   end
 
-
-
+  def password_requirements
+    if raw_password || new_record?
+      if raw_password.length < 6 || !(raw_password =~ /[!@#$%^&*]/)
+        errors.add(:password, "must be at least 6 characters long and contain at least 1 special character (!@#$%^&*).")
+      end
+    end
+  end
 end

@@ -4,25 +4,25 @@ User.destroy_all if User.all.count > 0
 
 user1 = User.create!(
   username: "user1",
-  password: 1,
+  password: "password!",
   email:   "u1@mail.com"
   )
 
 user2 = User.create!(
   username: "user2",
-  password: 12,
+  password: "password!",
   email:   "u2@mail.com"
   )
 
 user3 = User.create!(
   username: "user3",
-  password: 123,
+  password: "password!",
   email:   "u3@mail.com"
   )
 
 user4 = User.create!(
   username: "user4",
-  password: 1234,
+  password: "password!",
   email:   "u4@mail.com"
   )
 
