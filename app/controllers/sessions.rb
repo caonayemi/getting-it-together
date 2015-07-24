@@ -4,9 +4,9 @@ get '/login' do
 end
 
 post '/login' do
-  if user = User.authenticate(params[:sessions])
+  if @user = User.authenticate(params[:sessions])
     session[:user_id] = user.id
-    redirect "/users/#{user.id}"
+    redirect "/users/#{@user.id}"
   else
     @user = User.new(params[:sessions])
     @errors = ["Bad username - password combination"]
@@ -28,7 +28,7 @@ post '/signup' do
   @user = User.new(params[:sessions])
   if @user.save
     session[:user_id] = @user.id
-    redirect "/users/#{user.id}"
+    redirect "/users/#{@user.id}"
   else
     @errors = @user.errors.full_messages
     erb :"sessions/signup_form"
