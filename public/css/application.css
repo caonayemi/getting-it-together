@@ -16,3 +16,15 @@
 span.active {
   color: red;
 }
+
+.checked-box {
+  background: url('../images/checkbox_checked.png');
+}
+
+.unchecked-box {
+  background: url('../images/checkbox_unchecked.png');
+}
+
+h1 {
+  text-align: center;
+}
