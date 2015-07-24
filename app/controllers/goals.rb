@@ -9,7 +9,8 @@ post '/goals' do
     redirect "/login"
   end
 
-  @goal = Goal.new(setter: @user, params[:goal_info])
+  @goal = Goal.new(params[:goal_info])
+  @goal.setter = @user
   if @goal.save
     redirect "/users/#{@user.id}"
   else

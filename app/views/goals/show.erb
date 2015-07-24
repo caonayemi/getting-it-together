@@ -2,7 +2,7 @@
 <h1><%= @goal.name %></h1>
 <p><strong><%= @goal.pillar.name %>:</strong> <%= @goal.strand.name %></p>
 <p><%= @goal.description %></p>
-<p>Start: <%= @goal.start_at %></p>
+<p>Start: <%= @goal.set_at %></p>
 <p>Deadline: <%= @goal.deadline %></p>
 <p>Completed?
 <% if @goal.is_completed %>
