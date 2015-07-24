@@ -61,6 +61,7 @@ goals.each do |goal|
       Milestone.create!(setter: goal.setter, goal: goal, description: Faker::Hacker.say_something_smart)
     end
   when "No milestones; self-rating only"
+  end
 end
 
 Friendship.create!(initiator: user1, acceptor: user2)

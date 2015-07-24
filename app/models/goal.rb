@@ -16,8 +16,12 @@ class Goal < ActiveRecord::Base
   end
 
   def is_completed
-    self.milestones.all? do |milestone|
-      milestone.is_completed
+    if self.milestones.empty?
+      false
+    else
+      self.milestones.all? do |milestone|
+        milestone.is_completed
+      end
     end
   end
 
