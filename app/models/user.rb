@@ -20,6 +20,15 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  def self.authenticate(login_args)
+    login_user = User.find_by(username: login_args[:username])
+    if login_user && login_user.password == login_args[:password]
+      login_user
+    else
+      nil
+    end
+  end
+
   private
 
   def raw_password
