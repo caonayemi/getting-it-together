@@ -3,6 +3,6 @@
 <hr>
 <%= erb :"_error_box" %>
 <form action="/login" method="post" id="user-login">
-  <%= erb :"sessions/_login_form_fields", layout: false, locals: {person: @person } %>
+  <%= erb :"sessions/_login_form_fields", layout: false, locals: {user: @user } %>
   <input type="submit" value="Login">
 </form>

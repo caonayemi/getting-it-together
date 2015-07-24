@@ -1,14 +1,14 @@
 get '/login' do
-  @person = User.new
+  @user = User.new
   erb :"sessions/login_form"
 end
 
 post '/login' do
-  if person = User.authenticate(params[:sessions])
-    session[:user_id] = person.id
-    redirect "/users/#{person.id}"
+  if user = User.authenticate(params[:sessions])
+    session[:user_id] = user.id
+    redirect "/users/#{user.id}"
   else
-    @person = User.new(params[:sessions])
+    @user = User.new(params[:sessions])
     @errors = ["Bad username - password combination"]
     erb :"sessions/login_form"
   end
@@ -20,17 +20,17 @@ get '/logout' do
 end
 
 get '/signup' do
-  @person = User.new
+  @user = User.new
   erb :"sessions/signup_form"
 end
 
 post '/signup' do
-  @person = User.new(params[:sessions])
-  if @person.save
-    session[:user_id] = @person.id
-    redirect "/users/#{person.id}"
+  @user = User.new(params[:sessions])
+  if @user.save
+    session[:user_id] = @user.id
+    redirect "/users/#{user.id}"
   else
-    @errors = @person.errors.full_messages
+    @errors = @user.errors.full_messages
     erb :"sessions/signup_form"
   end
 end
