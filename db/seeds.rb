@@ -2,25 +2,25 @@ require 'faker'
 
 User.destroy_all if User.all.count > 0
 
-u1 = User.create!(
+user1 = User.create!(
   username: "user1",
   password: 1,
   email:   "u1@mail.com"
   )
 
-u2 = User.create!(
+user2 = User.create!(
   username: "user2",
   password: 12,
   email:   "u2@mail.com"
   )
 
-u3 = User.create!(
+user3 = User.create!(
   username: "user3",
   password: 123,
   email:   "u3@mail.com"
   )
 
-u4 = User.create!(
+user4 = User.create!(
   username: "user4",
   password: 1234,
   email:   "u4@mail.com"
@@ -49,3 +49,8 @@ strands = Strand.all
 20.times do
   Goal.create!(setter: users.sample, name: (Faker::Hacker.verb + " " + Faker::Hacker.adjective + " " + Faker::Hacker.noun), pillar: pillars.sample, strand: strands.sample, set_at: DateTime.current, deadline: (DateTime.current + 30))
 end
+
+Friendship.create!(initiator: user1, acceptor: user2)
+Friendship.create!(initiator: user1, acceptor: user3)
+Friendship.create!(initiator: user2, acceptor: user3)
+Friendship.create!(initiator: user4, acceptor: user2)
