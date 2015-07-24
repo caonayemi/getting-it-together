@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :friendships, foreign_key: :initiator_id
   has_many :friendships, foreign_key: :acceptor_id
 
+  validates :username, presence: true, uniqueness: true
+
+  # To Do: Add validations for password
+
   include BCrypt
 
   def password
