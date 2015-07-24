@@ -1,18 +1,19 @@
 <%= erb :_nav_bar, layout: false %>
 <h2>Set New Goal</h2>
 <form action="/goals" method="post" class="new-goal-form">
-  <input type="text" name="goal_info[name]" placeholder="Name your goal">
-  <select name="goal_info[pillar]">
-    <option></option>
+  <input type="text" name="name" placeholder="name your goal">
+  <select name="pillar_name">
+    <option>select a pillar</option>
     <% Pillar.all.each do |pillar| %>
-      <option value="<%= Pillar.find(pillar.id) %>"><%= pillar.name %></option>
+      <option value="<%= pillar.name %>"><%= pillar.name %></option>
     <% end %>
   </select>
-  <select name="goal_info[strand]">
-    <option></option>
+  <select name="strand_name">
+    <option>select a strand</option>
     <% Strand.all.each do |strand| %>
-      <option value="<%= Strand.find(strand.id) %>"><%= strand.name %></option>
+      <option value="<%= strand.name %>"><%= strand.name %></option>
     <% end %>
-  </select>
+  </select><br>
+  <textarea name="description">describe your goal</textarea>
   <input type="submit" value="Set Goal">
 </form>

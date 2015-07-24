@@ -9,8 +9,7 @@ post '/goals' do
     redirect "/login"
   end
 
-  @goal = Goal.new(params[:goal_info])
-  @goal.setter = @user
+  @goal = Goal.new(setter: @user, name: params[:name], pillar: Pillar.find_by(name: params[:pillar_name]), strand: Strand.find_by(name: params[:strand_name]), description: params[:description])
   if @goal.save
     redirect "/goals/#{@goal.id}/edit"
   else

@@ -28,4 +28,16 @@ class Goal < ActiveRecord::Base
   def deadline_is_after_set_date
     self.set_at < self.deadline
   end
+
+  def set_at=(set_date, set_time)
+    date = Date.parse(set_date)
+    time = Time.parse(set_time)
+    @set_at = DateTime.new(date.year, date.month, date.day, time.hour, time.min, time.sec, time.zone)
+  end
+
+  def deadline=(end_date, end_time)
+    date = Date.parse(end_date)
+    time = Time.parse(end_time)
+    @set_at = DateTime.new(date.year, date.month, date.day, time.hour, time.min, time.sec, time.zone)
+  end
 end
