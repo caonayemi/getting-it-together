@@ -19,10 +19,18 @@ span.active {
 
 .checked-box {
   background: url('../images/checkbox_checked.png');
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  background-size: 10px 10px;
 }
 
 .unchecked-box {
   background: url('../images/checkbox_unchecked.png');
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  background-size: 10px 10px;
 }
 
 h1 {
