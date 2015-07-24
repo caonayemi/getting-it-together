@@ -5,6 +5,7 @@ class Goal < ActiveRecord::Base
   has_many :milestones
 
   validates :setter, presence: true
+  validates :name, presence: true
   validates :pillar, presence: true
   validates :strand, presence: true
   validates :set_at, presence: true

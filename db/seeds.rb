@@ -1,3 +1,5 @@
+require 'faker'
+
 User.destroy_all if User.all.count > 0
 
 u1 = User.create!(
@@ -39,3 +41,11 @@ reflection = Strand.create!(name: "Reflection", description: "Something to keep 
 no_goal = Strand.create!(name: "No Goal", description: "This one is like it sounds", tracking_style: "No milestones; self-rating only")
 
 # To Do: Make seed data for goals using the users above
+
+users = User.all
+pillars = Pillar.all
+strands = Strand.all
+
+20.times do
+  Goal.create!(setter: users.sample, name: (Faker::Hacker.verb + " " + Faker::Hacker.adjective + " " + Faker::Hacker.noun), pillar: pillars.sample, strand: strands.sample, set_at: DateTime.current, deadline: (DateTime.current + 30))
+end

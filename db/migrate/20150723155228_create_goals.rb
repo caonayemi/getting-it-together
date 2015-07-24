@@ -2,6 +2,8 @@ class CreateGoals < ActiveRecord::Migration
   def change
     create_table :goals do |t|
       t.references :setter
+      t.string     :name
+      t.string     :description
       t.references :pillar
       t.references :strand
       t.datetime   :set_at
