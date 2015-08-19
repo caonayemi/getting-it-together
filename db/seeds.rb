@@ -1,6 +1,11 @@
 require 'faker'
 
 User.destroy_all if User.all.count > 0
+Pillar.destroy_all if Pillar.all.count > 0
+Strand.destroy_all if Strand.all.count > 0
+Goal.destroy_all if Goal.all.count > 0
+Milestone.destroy_all if Milestone.all.count > 0
+Friendship.destroy_all if Friendship.all.count > 0
 
 user1 = User.create!(
   username: "user1",
