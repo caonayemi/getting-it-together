@@ -1,18 +1,22 @@
 <%= erb :_nav_bar, layout: false %>
 <h1><%= @user.username %></h1>
-<% if @user.description %>
+
+
+
+
+<% if @user.description != "" && @user.description != nil %>
   <h3>Description</h3>
   <p><%= @user.description %></p>
 <% elsif current_user == @user %>
   <h3>Description</h3>
-  <p class="helpful-hints">This part of your profile is blank. <a href="users/<%= @user.id%>/edit">Click here</a> to add a description.</p>
+  <p class="helpful-hints">This part of your profile is blank. <a href="/users/<%= @user.id%>/edit">Click here</a> to add a description.</p>
 <% end %>
-<% if @user.motivation %>
+<% if @user.motivation != "" && @user.motivation != nil %>
   <h3>Motivation</h3>
   <p><%= @user.motivation %></p>
 <% elsif current_user == @user %>
   <h3>Motivation</h3>
-  <p class="helpful-hints">This part of your profile is blank. <a href="users/<%= @user.id%>/edit">Click here</a> to add your motivation(s).</p>
+  <p class="helpful-hints">This part of your profile is blank. <a href="/users/<%= @user.id%>/edit">Click here</a> to add your motivation(s).</p>
 <% end %>
 <h2>Goals</h2>
 <% @goals.each do |goal| %>

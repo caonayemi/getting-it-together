@@ -9,3 +9,7 @@ get '/' do
   erb :index
 end
 
+get '/togetherness' do
+  erb :togetherness_definition
+end
+

@@ -1,0 +1,13 @@
+<%= erb :_nav_bar, layout: false %>
+<h1><%= @user.username %></h1>
+<form action="/users/<%= @user.id %>" method="post" class="edit-user-form">
+  <input type="hidden" name="_method" value="put">
+  <p><strong>Description:</strong> Tell us a little about yourself</p>
+  <textarea id="description" name="description"><%= @user.description %></textarea>
+  <p><strong>Motivation(s):</strong> Tell us about what motivates you to get it together</p>
+  <textarea id="motivation" name="motivation"><%= @user.motivation %></textarea>
+  <a href="/users/<%= @user.id %>">
+    <input type="button" value="Cancel">
+  </a>
+  <input type="submit" value="Save Changes">
+</form>

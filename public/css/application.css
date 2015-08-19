@@ -42,3 +42,7 @@ h1 {
 .goal-listing h3 {
   display: inline-block;
 }
+
+.helpful-hints {
+  color: gray;
+}
