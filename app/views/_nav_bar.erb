@@ -1,7 +1,7 @@
 <div class="nav-bar">
   <div class="definition"><a href="/">Togetherness: The Definition</a></div>
   <% if current_user %>
-    <a href="/logout">Logout</a> | <a href="/users/<%= session[:user_id] %>">View My Profile</a> | <a href="/goals/new">Set New Goal</a> | <a href="/friends">My Friends</a>
+    <a href="/">Home</a> | <a href="/users/<%= session[:user_id] %>">View My Profile</a> | <a href="/users/<%= session[:user_id] %>/edit">Edit My Profile</a> | <a href="/goals/new">Set New Goal</a> | <a href="/friends">My Friends</a> | <a href="/logout">Logout</a>
   <% else %>
     <a href="/login">Login</a> | <a href="/signup">Create Account</a>
   <% end %>
