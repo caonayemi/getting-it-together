@@ -3,6 +3,8 @@ class Goal < ActiveRecord::Base
   belongs_to :pillar
   belongs_to :strand
   has_many :milestones
+  has_many :comments, as: :commentable
+  has_many :commenters, through: :comments
 
   validates :setter, presence: true
   validates :name, presence: true

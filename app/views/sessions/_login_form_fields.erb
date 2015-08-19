@@ -1,2 +1,2 @@
-<input type="text" name="sessions[username]" placeholder="username" value="<%= user.username %>">
+<input type="text" name="sessions[username]" placeholder="username" <% if @user %>value="<%= user.username %>" <% end %>>
 <input type="password" name="sessions[password]" placeholder="password">

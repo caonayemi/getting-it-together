@@ -6,6 +6,7 @@ Strand.destroy_all if Strand.all.count > 0
 Goal.destroy_all if Goal.all.count > 0
 Milestone.destroy_all if Milestone.all.count > 0
 Friendship.destroy_all if Friendship.all.count > 0
+Comment.destroy_all if Comment.all.count > 0
 
 user1 = User.create!(
   username: "user1",
@@ -73,3 +74,5 @@ Friendship.create!(initiator: user1, acceptor: user2)
 Friendship.create!(initiator: user1, acceptor: user3)
 Friendship.create!(initiator: user2, acceptor: user3)
 Friendship.create!(initiator: user4, acceptor: user2)
+
+Comment.create!(commenter: user1, commentable: user2, content: "We're great friends and I'm excited to see you get it together!")

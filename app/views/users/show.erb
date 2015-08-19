@@ -1,9 +1,5 @@
 <%= erb :_nav_bar, layout: false %>
 <h1><%= @user.username %></h1>
-
-
-
-
 <% if @user.description != "" && @user.description != nil %>
   <h3>Description</h3>
   <p><%= @user.description %></p>
@@ -19,6 +15,12 @@
   <p class="helpful-hints">This part of your profile is blank. <a href="/users/<%= @user.id%>/edit">Click here</a> to add your motivation(s).</p>
 <% end %>
 <h2>Goals</h2>
-<% @goals.each do |goal| %>
-  <%= erb :"_goal_listing", layout: false, locals: {goal: goal} %>
+<% if @goals.count > 0 %>
+  <% @goals.each do |goal| %>
+    <%= erb :"_goal_listing", layout: false, locals: {goal: goal} %>
+  <% end %>
+<% elsif @user == current_user %>
+  <p class="helpful-hints">You have not yet posted any goals. <a href="/goals/new">Click here</a> to set one now!</p>
+<% else %>
+  <p class="helpful-hints"><%= @user.username %> has not yet set any goals.</p>
 <% end %>

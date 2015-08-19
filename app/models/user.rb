@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   has_many :strands, through: :goals
   has_many :friendships, foreign_key: :initiator_id
   has_many :friendships, foreign_key: :acceptor_id
+  has_many :comments, foreign_key: :commenter
+  has_many :comments, as: :commentable
+
 
   validate :email_requirements
   validates :username, presence: true, uniqueness: true
