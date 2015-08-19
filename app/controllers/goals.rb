@@ -15,13 +15,17 @@ post "/goals" do
   @goal.generate_set_at(params[:set_date], params[:set_time])
   @goal.generate_deadline(params[:end_date], params[:end_time])
 
-  if @goal.save
-    redirect "/goals/#{@goal.id}/edit"
+  if @user.save && @goal.save
+    redirect "/users/#{@user.id}"
   else
     @errors = @goal.errors.full_messages
     erb :"goals/new"
   end
 end
+
+# get "/goals" do
+#   redirect "/users/#{current_user.id}"
+# end
 
 get "/goals/:goal_id" do
   @goal = Goal.find(params[:goal_id])

@@ -2,9 +2,8 @@
 <h2>Set New Goal</h2>
 <form action="/goals" method="post" class="new-goal-form">
   <%= erb :"goals/_goal_form", layout: false %>
-
+  <input type="submit" value="Set Goal">
   <a href="/users/<%= @user.id %>">
     <input type="button" value="Cancel">
   </a>
-  <input type="submit" value="Set Goal">
 </form>
