@@ -1,0 +1,38 @@
+<input type="text" name="name" placeholder="name your goal">
+
+<select name="pillar_name">
+  <option>select a pillar</option>
+  <% Pillar.all.each do |pillar| %>
+    <option value="<%= pillar.name %>"><%= pillar.name %></option>
+  <% end %>
+</select>
+
+<select name="strand_name">
+  <option>select a strand</option>
+  <% Strand.all.each do |strand| %>
+    <option value="<%= strand.name %>"><%= strand.name %></option>
+  <% end %>
+</select><br>
+
+<p>Describe your goal here:</p>
+<textarea name="description">
+  <% if @goal.description %>
+    <%= @goal.description %>
+  <% end %>
+</textarea><br>
+
+<% if @goal.set_at %>
+  <input type="date" name="set_date" value="<%= @goal.set_at.to_date %>">
+  <input type="time" name="set_time" value="<%= @goal.set_at.to_time %>"><br>
+<% else %>
+  <input type="date" name="set_date" value="<%= Date.current %>">
+  <input type="time" name="set_time" value="<%= Time.current %>"><br>
+<% end %>
+
+<% if @goal.deadline %>
+  <input type="date" name="end_date" value="<%= @goal.deadline.to_date %>">
+  <input type="time" name="end_time" value="<%= @goal.deadline.to_time %>"><br>
+<% else %>
+  <input type="date" name="end_date" value="<%= (Date.current + 30) %>">
+  <input type="time" name="end_time" value="<%= Time.current %>"><br>
+<% end %>

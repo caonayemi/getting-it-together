@@ -1,4 +1,6 @@
 get "/goals/new" do
+  @user = current_user
+  @goal = Goal.new
   erb :"goals/new"
 end
 

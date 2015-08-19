@@ -1,23 +1,10 @@
 <%= erb :_nav_bar, layout: false %>
 <h2>Set New Goal</h2>
 <form action="/goals" method="post" class="new-goal-form">
-  <input type="text" name="name" placeholder="name your goal">
-  <select name="pillar_name">
-    <option>select a pillar</option>
-    <% Pillar.all.each do |pillar| %>
-      <option value="<%= pillar.name %>"><%= pillar.name %></option>
-    <% end %>
-  </select>
-  <select name="strand_name">
-    <option>select a strand</option>
-    <% Strand.all.each do |strand| %>
-      <option value="<%= strand.name %>"><%= strand.name %></option>
-    <% end %>
-  </select><br>
-  <textarea name="description">describe your goal</textarea><br>
-  <input type="date" name="set_date" value="<%= Date.current %>">
-  <input type="time" name="set_time" value="<%= Time.current %>"><br>
-  <input type="date" name="end_date" value="<%= (Date.current + 30) %>">
-  <input type="time" name="end_time" value="<%= Time.current %>"><br>
+  <%= erb :"goals/_goal_form", layout: false %>
+
+  <a href="/users/<%= @user.id %>">
+    <input type="button" value="Cancel">
+  </a>
   <input type="submit" value="Set Goal">
 </form>
