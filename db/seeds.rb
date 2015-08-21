@@ -46,7 +46,7 @@ outreach = Strand.create!(name: "Outreach", description: "Support to other users
 reflection = Strand.create!(name: "Reflection", description: "Something to keep in mind, like a mantra", tracking_style: "No milestones; self-rating only")
 no_goal = Strand.create!(name: "No Goal", description: "This one is like it sounds", tracking_style: "No milestones; self-rating only")
 
-# To Do: Make seed data for goals using the users above
+# seed data for goals using the users above
 
 users = User.all
 pillars = Pillar.all
