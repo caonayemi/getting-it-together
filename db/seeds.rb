@@ -1,4 +1,4 @@
-require 'faker'
+# require 'faker'
 
 User.destroy_all if User.all.count > 0
 Pillar.destroy_all if Pillar.all.count > 0
