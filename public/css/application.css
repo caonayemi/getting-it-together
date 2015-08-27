@@ -1,7 +1,36 @@
+body {
+  background-color: #459E62;
+}
+
 .container {
   margin: 0 auto;
   width: 720px;
   padding: 20px;
+  background-color: #EBEBFF;
+}
+
+.nav-bar {
+  background-color: #B8628D;
+  margin: -20px -20px 1em -20px;
+  padding: 1em;
+  color: white;
+}
+
+.nav-bar a {
+  color: white;
+  margin: 0.5em;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.definition-link {
+  display: inline-block;
+}
+
+.nav-options {
+  display: inline-block;
 }
 
 .pillar-name {

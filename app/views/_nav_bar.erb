@@ -1,9 +1,11 @@
 <div class="nav-bar">
-  <div class="logo"><a href="/">TogetherGetter</a></div>
-  <div class="definition"><a href="/togetherness">Togetherness: The Definition</a></div>
-  <% if current_user %>
-    <a href="/users/<%= session[:user_id] %>">View My Profile</a> | <a href="/users/<%= session[:user_id] %>/edit">Edit My Profile</a> | <a href="/goals/new">Set New Goal</a> | <a href="/friends">My Friends</a> | <a href="/logout">Logout</a>
-  <% else %>
-    <a href="/login">Login</a> | <a href="/signup">Create Account</a>
-  <% end %>
+  <div class="logo"><a href="/">TogetherGetter Home</a></div>
+  <div class="definition-link"><a href="/togetherness">Togetherness: The Definition</a></div>
+  <div class="nav-options">
+    <% if current_user %>
+      <a href="/users/<%= session[:user_id] %>">View My Profile</a> | <a href="/users/<%= session[:user_id] %>/edit">Edit My Profile</a> | <a href="/goals/new">Set New Goal</a> | <a href="/friends">My Friends</a> | <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login</a> | <a href="/signup">Create Account</a>
+    <% end %>
+  </div>
 </div>
