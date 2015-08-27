@@ -16,6 +16,8 @@ end
 put '/users/:user_id' do
   @user = User.find(params[:user_id])
 
+  @user.attributes = { email: @user.email, username: @user.username, password: @user.password, description: params[:description], motivation: params[:motivation] }
+
   if @user.save
     redirect "/users/#{@user.id}"
   else

@@ -6,8 +6,8 @@
   <textarea id="description" name="description"><%= @user.description %></textarea>
   <p><strong>Motivation(s):</strong> Tell us about what motivates you to get it together</p>
   <textarea id="motivation" name="motivation"><%= @user.motivation %></textarea>
+  <input type="submit" value="Save Changes">
   <a href="/users/<%= @user.id %>">
     <input type="button" value="Cancel">
   </a>
-  <input type="submit" value="Save Changes">
 </form>
