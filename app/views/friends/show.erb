@@ -1,0 +1,9 @@
+<%= erb :_nav_bar, layout: false %>
+<h1><%= @user.username %>'s Friends</h1>
+<% if @friends.empty? %>
+  blah
+<% else %>
+  <% @friends.each do |friend| %>
+    <a href="/users/<%= friend.id %>"><%= friend.username %></a>
+  <% end %>
+<% end %>
