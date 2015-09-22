@@ -1,5 +1,5 @@
 get '/friends' do
-  @user = User.find(params[:user_id])
+  @user = current_user
   @friends = @user.friends
   erb :"friends/show"
 end
