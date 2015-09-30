@@ -1,7 +1,8 @@
 get "/goals/new" do
-  @user = current_user
-  @goal = Goal.new
-  erb :"goals/new"
+  erb :construction
+  # @user = current_user
+  # @goal = Goal.new
+  # erb :"goals/new"
 end
 
 post "/goals" do
