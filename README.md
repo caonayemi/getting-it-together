@@ -1,4 +1,4 @@
-TogetherGetter
+##TogetherGetter
 
 Welcome to *TogetherGetter*, the website that helps you *Get It Together*. Create an account or sign in to set goals and track your progress. You can also encourage your friends by commenting on the progress they've made toward their own goals.
 
